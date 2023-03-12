@@ -1,12 +1,13 @@
-import React, { useState, useRef } from "react";
-import { iconCollective } from "../../Constant/Constant";
+import React, { useRef, useState } from "react";
+
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
-import TextIncreaseRoundedIcon from "@mui/icons-material/TextIncreaseRounded";
-import TextDecreaseRoundedIcon from "@mui/icons-material/TextDecreaseRounded";
-import styles from "./Home.module.css";
-import jsPDF from "jspdf";
 import ImageIcon from "@mui/icons-material/Image";
+import TextDecreaseRoundedIcon from "@mui/icons-material/TextDecreaseRounded";
+import TextIncreaseRoundedIcon from "@mui/icons-material/TextIncreaseRounded";
 import html2canvas from "html2canvas";
+import { iconCollective } from "../../Constant/Constant";
+import jsPDF from "jspdf";
+import styles from "./Home.module.css";
 
 function Home() {
   const [zoomLevel, setZoomLevel] = useState(100);
@@ -51,13 +52,6 @@ function Home() {
   function handleBackColorChange(color) {
     document.execCommand("backColor", false, color);
   }
-
-  //   function handleDownload() {
-  //     const sheetContent = document.querySelector(`.${styles.sheet}`).innerHTML;
-  //     const pdfDoc = new jsPDF();
-  //     pdfDoc.text(sheetContent, 10, 10);
-  //     pdfDoc.save("document.pdf");
-  //   }
 
   async function handleDownload() {
     const sheetContent = document.querySelector(`.${styles.TextSheet}`);
@@ -151,8 +145,9 @@ function Home() {
         <div
           className={styles.TextSheet}
           contentEditable="true"
-          style={{ fontSize: "17px" }}
+          
         >
+          @Type here...
           {" "}
           <div>
             {image ? (
@@ -163,7 +158,7 @@ function Home() {
               />
             ) : (
               ""
-            )}{" "}
+            )}
           </div>
         </div>
       </div>
