@@ -21,7 +21,7 @@ function Home() {
   }
 
   const fileInputRef = useRef(null);
-  const [image, setImage] = useState(null);
+  const [image] = useState(null);
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
